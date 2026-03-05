@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI CV Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">CV AI</a>
+      <div class="nav-center">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Generator</a></li>
+          <li><a href="#portfolio">Tips</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="mobile-auth-buttons">
+            <a href="#services" class="auth-btn login-btn">Skúsiť demo</a>
+            <a href="#contact" class="auth-btn signup-btn">Support</a>
+          </li>
+        </ul>
+      </div>
+      <div class="auth-buttons">
+        <a href="#services" class="auth-btn login-btn">Skúsiť demo</a>
+        <a href="#contact" class="auth-btn signup-btn">Support</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </nav>
+
+  <section id="home" class="section">
+    <div>
+      <h1>AI CV GENERATOR</h1>
+      <p class="section-info">Vlož svoje údaje, zvoľ jazyk a AI ti vytvorí profesionálne CV pripravené na kopírovanie.</p>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="card-box">
+      <h1>ABOUT</h1>
+      <p class="section-info">Jednoduchá statická stránka (HTML + CSS + JS), ktorá volá OpenAI API cez tvoj vlastný API key.</p>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="cv-generator card-box">
+      <h1>GENERÁTOR CV</h1>
+      <p class="section-info">API kľúč sa ukladá iba v prehliadači (localStorage). Nepoužívaj produkčný kľúč bez backend proxy.</p>
+
+      <form id="cvForm" class="cv-form">
+        <label for="apiKey">OpenAI API Key</label>
+        <input id="apiKey" type="password" placeholder="sk-..." required />
+
+        <label for="model">Model</label>
+        <input id="model" type="text" value="gpt-4.1-mini" required />
+
+        <label for="fullName">Meno a priezvisko</label>
+        <input id="fullName" type="text" placeholder="Ján Novák" required />
+
+        <label for="position">Pozícia</label>
+        <input id="position" type="text" placeholder="Frontend Developer" required />
+
+        <label for="experience">Skúsenosti</label>
+        <textarea id="experience" rows="4" placeholder="3 roky React, 2 roky Node.js..." required></textarea>
+
+        <label for="skills">Zručnosti</label>
+        <textarea id="skills" rows="3" placeholder="JavaScript, TypeScript, React, Git..." required></textarea>
+
+        <label for="education">Vzdelanie</label>
+        <textarea id="education" rows="3" placeholder="STU FEI, Informatika, 2018-2023" required></textarea>
+
+        <label for="language">Jazyk CV</label>
+        <select id="language">
+          <option value="slovak">Slovenčina</option>
+          <option value="english">English</option>
+        </select>
+
+        <button id="generateBtn" type="submit" class="generate-btn">Vygenerovať CV</button>
+      </form>
+
+      <div class="result-wrap">
+        <h2>Výstup</h2>
+        <pre id="result">Tu sa zobrazí vygenerované CV...</pre>
+        <button id="copyBtn" class="auth-btn signup-btn" type="button">Kopírovať CV</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <div class="card-box">
+      <h1>TIPS</h1>
+      <p class="section-info">Pridaj merateľné výsledky (napr. +30% výkon), konkrétne technológie a jasný kariérny cieľ.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="card-box">
+      <h1>CONTACT</h1>
+      <p class="section-info">Prepojenie a nasadenie na GitHub Pages nájdeš v README.md.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Company</h3>
+          <a href="#about">About Us</a>
+          <a href="#services">Generator</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="#portfolio">Tips</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <a href="#">hello@company.com</a>
+          <a href="#">+421 900 000 000</a>
+          <a href="#">Follow Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CV AI Generator. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
